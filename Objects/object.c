@@ -1165,6 +1165,7 @@ PyObject_GetAttr(PyObject *v, PyObject *name)
                      Py_TYPE(name)->tp_name);
         return NULL;
     }
+    // MRW: Error if names are not `_sunder_` or `__dunder__`
 
     PyObject* result = NULL;
     if (tp->tp_getattro != NULL) {
