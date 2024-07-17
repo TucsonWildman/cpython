@@ -2940,6 +2940,7 @@ _Py_Mangle(PyObject *privateobj, PyObject *ident)
 {
     /* Name mangling: __private becomes _classname__private.
        This is independent from how the name is used. */
+    // TODO: If `_protected` look in the symtable of privateobj
     if (privateobj == NULL || !PyUnicode_Check(privateobj) ||
         PyUnicode_READ_CHAR(ident, 0) != '_' ||
         PyUnicode_READ_CHAR(ident, 1) != '_') {
